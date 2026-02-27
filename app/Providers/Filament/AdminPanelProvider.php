@@ -32,6 +32,8 @@ class AdminPanelProvider extends PanelProvider
             ->databaseTransactions()
             ->registration()
             ->passwordReset()
+            ->profile()
+            ->emailVerification()
             ->brandLogo('/images/logo-light.png')
             ->darkModeBrandLogo('/images/logo-dark.png')
             ->colors([
