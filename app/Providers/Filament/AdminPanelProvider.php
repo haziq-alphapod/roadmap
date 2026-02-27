@@ -33,7 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->databaseTransactions()
             ->registration()
             ->passwordReset()
-            ->profile(EditProfile::class)
+            ->profile(EditProfile::class, isSimple: false)
             ->emailVerification()
             ->brandLogo('/images/logo-light.png')
             ->darkModeBrandLogo('/images/logo-dark.png')
