@@ -2,7 +2,9 @@
 
 namespace App\Filament\Resources\Features\Schemas;
 
+use App\Enums\Feature\FeatureStatus;
 use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Schemas\Schema;
@@ -15,14 +17,15 @@ class FeatureForm
             ->components([
                 TextInput::make('name')
                     ->required(),
-                TextInput::make('status')
-                    ->required()
-                    ->numeric()
-                    ->default(0),
+                Select::make('status')
+                    ->options(FeatureStatus::class)
+                    ->enum(FeatureStatus::class)
+                    ->searchable()
+                    ->default(FeatureStatus::Proposed)
+                    ->required(),
                 TextInput::make('type')
                     ->required()
-                    ->numeric()
-                    ->default(0),
+                    ->default('Feature'),
                 Textarea::make('description')
                     ->columnSpanFull(),
                 TextInput::make('effort_in_days')

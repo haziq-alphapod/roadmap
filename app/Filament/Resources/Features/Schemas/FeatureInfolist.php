@@ -13,9 +13,8 @@ class FeatureInfolist
             ->components([
                 TextEntry::make('name'),
                 TextEntry::make('status')
-                    ->numeric(),
-                TextEntry::make('type')
-                    ->numeric(),
+                    ->badge(),
+                TextEntry::make('type'),
                 TextEntry::make('description')
                     ->placeholder('-')
                     ->columnSpanFull(),

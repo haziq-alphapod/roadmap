@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\Feature\FeatureStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,15 +18,15 @@ class FeatureFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->sentence(),
-            'status' => $this->faker->randomElement(['Proposed', 'Planned', 'In Progress', 'Completed']),
-            'type' => $this->faker->randomElement(["Feature", 'Bug', 'Improvement', 'Task']),
-            'description' => $this->faker->paragraph(),
-            'effort_in_days' => $this->faker->numberBetween(1, 365),
-            'priority' => $this->faker->numberBetween(1, 10),
-            'cost' => $this->faker->randomFloat(2, 2000, 20000),
+            'name'                 => $this->faker->sentence(),
+            'status'               => $this->faker->randomElement(FeatureStatus::cases()),
+            'type'                 => $this->faker->randomElement(["Feature", 'Bug', 'Improvement', 'Task']),
+            'description'          => $this->faker->paragraph(),
+            'effort_in_days'       => $this->faker->numberBetween(1, 365),
+            'priority'             => $this->faker->numberBetween(1, 10),
+            'cost'                 => $this->faker->randomFloat(2, 2000, 20000),
             'target_delivery_date' => $this->faker->optional()->dateTimeBetween(now(), now()->addYear()),
-            'delivered_at' => null,
+            'delivered_at'         => null,
         ];
     }
 }

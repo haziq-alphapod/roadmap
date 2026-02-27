@@ -18,11 +18,11 @@ class FeaturesTable
                 TextColumn::make('name')
                     ->searchable(),
                 TextColumn::make('status')
-                    ->numeric()
-                    ->sortable(),
+                    ->badge()
+                    ->sortable()
+                    ->searchable(),
                 TextColumn::make('type')
-                    ->numeric()
-                    ->sortable(),
+                    ->searchable(),
                 TextColumn::make('effort_in_days')
                     ->numeric()
                     ->sortable(),

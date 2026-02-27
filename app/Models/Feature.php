@@ -9,4 +9,11 @@ class Feature extends Model
 {
     /** @use HasFactory<\Database\Factories\FeatureFactory> */
     use HasFactory;
+
+    protected function casts(): array
+    {
+        return [
+            'status' => \App\Enums\Feature\FeatureStatus::class,
+        ];
+    }
 }
