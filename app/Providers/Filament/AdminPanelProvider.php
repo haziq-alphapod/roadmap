@@ -30,6 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->unsavedChangesAlerts()
             ->databaseTransactions()
+            ->registration()
             ->brandLogo('/images/logo-light.png')
             ->darkModeBrandLogo('/images/logo-dark.png')
             ->colors([
