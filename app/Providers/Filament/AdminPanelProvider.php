@@ -28,8 +28,10 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandLogo('/images/logo-light.png')
+            ->darkModeBrandLogo('/images/logo-dark.png')
             ->colors([
-                'primary' => Color::Amber,
+                'primary' => Color::convertToOklch('#7716B9'),
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
