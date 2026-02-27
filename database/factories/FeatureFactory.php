@@ -18,8 +18,8 @@ class FeatureFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence(),
-            'status' => $this->faker->numberBetween(0, 4),
-            'type' => $this->faker->numberBetween(0, 4),
+            'status' => $this->faker->randomElement(['Proposed', 'Planned', 'In Progress', 'Completed']),
+            'type' => $this->faker->randomElement(["Feature", 'Bug', 'Improvement', 'Task']),
             'description' => $this->faker->paragraph(),
             'effort_in_days' => $this->faker->numberBetween(1, 365),
             'priority' => $this->faker->numberBetween(1, 10),

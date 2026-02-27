@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('features', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedSmallInteger('status')->default(0);
-            $table->unsignedSmallInteger('type')->default(0);
+            $table->string('status')->default('Proposed');
+            $table->string('type')->default('Feature');
             $table->text('description')->nullable();
             $table->smallInteger('effort_in_days')->unsigned()->default(0);
             $table->smallInteger('priority')->unsigned()->default(0);
