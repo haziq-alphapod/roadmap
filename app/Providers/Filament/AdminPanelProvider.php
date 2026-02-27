@@ -28,6 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->unsavedChangesAlerts()
             ->brandLogo('/images/logo-light.png')
             ->darkModeBrandLogo('/images/logo-dark.png')
             ->colors([
