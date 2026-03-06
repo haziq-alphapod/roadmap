@@ -2,7 +2,6 @@
 
 namespace App\Filament\Resources\Features;
 
-use App\Filament\Resources\Features\Pages\CreateFeature;
 use App\Filament\Resources\Features\Pages\EditFeature;
 use App\Filament\Resources\Features\Pages\ListFeatures;
 use App\Filament\Resources\Features\Pages\ViewFeature;
