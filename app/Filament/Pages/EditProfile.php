@@ -18,13 +18,7 @@ class EditProfile extends \Filament\Auth\Pages\EditProfile
                         $this->getEmailFormComponent(),
                         TextInput::make('phone')
                             ->required()
-                            ->label('Phone')
-                            ->tel()
-                            ->minLength(10)
-                            ->maxLength(15)
-                            ->prefixIcon('heroicon-o-phone')
-                            ->placeholder('+60 1123 456789')
-                            ->rules(['required', 'string', 'max:255']),
+                            ->phone(),
                         $this->getPasswordFormComponent(),
                         $this->getPasswordConfirmationFormComponent(),
                         $this->getCurrentPasswordFormComponent(),
